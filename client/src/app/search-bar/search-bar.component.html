@@ -1,0 +1,8 @@
+<div class="search-container">
+    <mat-form-field class="search-field">
+        <input matInput #searchBar type="text" placeholder="E.g. Avengers Endgame, Titanic II">
+    </mat-form-field>
+    <button mat-fab color="primary" class="search-button" (click)="searchMovie(searchBar.value)">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+    </button>
+</div>

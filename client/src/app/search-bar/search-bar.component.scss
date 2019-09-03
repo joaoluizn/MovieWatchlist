@@ -1,0 +1,18 @@
+.search-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 7px 20px -4px rgba(0,0,0,0.36);
+    box-shadow: 0px 7px 20px -4px rgba(0,0,0,0.36);
+  }
+
+.search-field {
+  flex: 3 1 auto;
+}
+
+.search-button {
+  flex: 1 1 1;
+  margin-left: 15px;
+}

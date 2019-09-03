@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  title: string = 'Watchlist';
+  parentMovies: any[] = [];
+
+  searchReceiver($event) {
+    console.log('Recebido: >>>> ', $event);
+    this.parentMovies = $event;
+  }
 }
