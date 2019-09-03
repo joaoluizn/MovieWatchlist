@@ -1,22 +1,22 @@
-package com.zenos.watchlist.models;
+package com.zenos.watchlist.wrappers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieList {
+public class MovieListWrapper {
     @JsonProperty("Search")
-    private List<SimpleMovie> movies;
+    private List<SimpleMovieWrapper> movies;
 
     @JsonProperty("Response")
     private String response;
 
-    public MovieList() {
+    public MovieListWrapper() {
         movies = new ArrayList<>();
     }
 
-    public List<SimpleMovie> getMovies() {
+    public List<SimpleMovieWrapper> getMovies() {
         return movies;
     }
 

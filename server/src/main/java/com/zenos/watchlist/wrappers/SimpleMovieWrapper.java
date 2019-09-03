@@ -1,8 +1,8 @@
-package com.zenos.watchlist.models;
+package com.zenos.watchlist.wrappers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SimpleMovie {
+public class SimpleMovieWrapper {
     @JsonProperty("Title")
     private String title;
 
