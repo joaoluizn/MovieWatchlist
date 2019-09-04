@@ -10,7 +10,6 @@ export class AppComponent {
   parentMovies: any[] = [];
 
   searchReceiver($event) {
-    console.log('Recebido: >>>> ', $event);
     this.parentMovies = $event;
   }
 }

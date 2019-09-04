@@ -1,0 +1,36 @@
+<div class="movie-container">
+    <img class="movie-poster" *ngIf="movie.Poster" src="{{ movie.Poster }}" alt="Image not found">
+
+    <div class="movie-info">
+        <h2 *ngIf="movie.Title">{{ movie.Title }}</h2>
+
+        <div class="release">
+            <h3>Release Date</h3>
+            <span *ngIf="movie.Released">{{ movie.Released }}</span>
+        </div>
+
+        <div class="genre">
+            <h3>Genre</h3>
+            <span *ngIf="movie.Genre">{{ movie.Genre }} </span>
+        </div>
+
+        <div class="rating">
+            <div class="imdb">
+                <h3>IMDb Rating</h3>
+                <span *ngIf="movie.imdbRating">{{ movie.imdbRating }}</span>
+            </div>
+            <div class="meta">
+                <h3>Metascore</h3>
+                <span *ngIf="movie.Metascore">{{ movie.Metascore }}</span>
+            </div>
+            <div class="pg">
+                    <h3>Rated</h3>
+                    <span *ngIf="movie.Rated">{{ movie.Rated }}</span>
+                </div>
+        </div>
+    </div>
+
+    <mat-icon  class="movie-fav">
+        favorite_border
+    </mat-icon>
+</div>

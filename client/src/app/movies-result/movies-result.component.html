@@ -1,5 +1,3 @@
 <div *ngFor="let movie of movies">
-        <p *ngIf="movie.Title">
-          Description: {{ movie.Title }}
-        </p>
+    <app-movie-item [movie]="movie"></app-movie-item>
 </div>

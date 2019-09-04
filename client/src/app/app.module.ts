@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesResultComponent } from './movies-result/movies-result.component';
+import { MovieItemComponent } from './movie-item/movie-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    MoviesResultComponent
+    MoviesResultComponent,
+    MovieItemComponent
   ],
   imports: [
     BrowserModule,

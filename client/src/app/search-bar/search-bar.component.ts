@@ -1,6 +1,5 @@
 import { Component, OnInit,EventEmitter, Output } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Router }                          from '@angular/router';
+import {MovieService} from '../movie.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,26 +9,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class SearchBarComponent implements OnInit {
   @Output() searchOutput = new EventEmitter<any>();
 
-  private searchMovieUrl = 'http://0.0.0.0:8080/api/search-movies?searchQuery={0}';
-
   constructor(
-    private httpClient: HttpClient,
-    // private router: Router
+    private movieService: MovieService,
     ) {}
 
   ngOnInit() {
   }
 
   searchMovie(searchValue){
-    let query = this.searchMovieUrl.replace("{0}", searchValue);
-    let movies: any[] = [];
-    this.httpClient.get(query).subscribe((data)=> {
-      data['Movies'].forEach(element => {
-        console.log("Imprimindo:", element);
-        movies.push(element);
-      });
-      console.log("Finishing pushing data", movies);
-      this.searchOutput.emit(movies);
-    });
+    this.searchOutput.emit(this.movieService.searchMovies(searchValue));
   }
 }
