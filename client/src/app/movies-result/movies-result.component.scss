@@ -1,5 +1,21 @@
-app-movie-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+app-movie-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.greetings {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.error-message {
+  background-color: red;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

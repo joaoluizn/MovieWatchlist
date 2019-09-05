@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-    <span>A Spring Angular Watchlist</span>
+  <span>A Spring Angular Watchlist</span>
 </mat-toolbar>
 
 <div class="container">
@@ -7,6 +7,15 @@
   <app-search-bar (searchOutput)="searchReceiver($event)"></app-search-bar>
 </div>
 
-<div class="movies-container">
-    <app-movies-result [movies]="parentMovies"></app-movies-result>
-</div>
+<mat-tab-group class="tabs" mat-align-tabs="center" (selectedTabChange)="reloadTab($event)">
+  <mat-tab label="Movies">
+    <div class="movies-container">
+      <app-movies-result [movies]="parentMovies"></app-movies-result>
+    </div>
+  </mat-tab>
+  <mat-tab label="Favorites">
+    <div class="favorites-container">
+      <app-favorite-result [favorites]="favorites"></app-favorite-result>
+    </div>
+  </mat-tab>
+</mat-tab-group>

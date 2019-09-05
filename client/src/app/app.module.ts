@@ -7,13 +7,15 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesResultComponent } from './movies-result/movies-result.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
+import { FavoriteResultComponent } from './favorite-result/favorite-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     MoviesResultComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    FavoriteResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
-import {MovieService} from '../movie.service';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,14 +9,35 @@ import {MovieService} from '../movie.service';
 export class SearchBarComponent implements OnInit {
   @Output() searchOutput = new EventEmitter<any>();
 
+  messageError = '';
+  error = false;
+  loading = false;
+
   constructor(
     private movieService: MovieService,
-    ) {}
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  searchMovie(searchValue) {
+    this.loading = true;
+    this.movieService.searchMovies(searchValue).subscribe(
+      movies => {
+        this.searchOutput.emit(movies);
+        this.error = false;
+        this.loading = false;
+      },
+      err => {
+        this.handleError(err);
+        this.loading = false;
+        this.movieService.updateLastSuccess(false);
+      },
+      () => this.movieService.updateLastSuccess(true)
+    );
   }
 
-  searchMovie(searchValue){
-    this.searchOutput.emit(this.movieService.searchMovies(searchValue));
+  handleError(error) {
+    this.messageError = error.error.message;
+    this.error = true;
   }
 }

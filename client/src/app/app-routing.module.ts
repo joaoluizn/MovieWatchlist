@@ -6,6 +6,8 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const routes: Routes = [];
 
@@ -19,6 +21,8 @@ const routes: Routes = [];
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     RouterModule,
@@ -27,6 +31,8 @@ const routes: Routes = [];
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class AppRoutingModule { }

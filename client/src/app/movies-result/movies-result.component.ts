@@ -10,6 +10,9 @@ export class MoviesResultComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  isEmpty() {
+    return this.movies.length === 0;
+  }
 }

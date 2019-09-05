@@ -1,16 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
   styleUrls: ['./movie-item.component.scss']
 })
-export class MovieItemComponent implements OnInit {
+export class MovieItemComponent implements OnInit, OnChanges {
   @Input() movie: any;
 
-  constructor() { }
+  favorite: boolean = false;
+  favoriteIcon: string = 'favorite_border';
+
+  constructor(
+    private movieService: MovieService
+  ) { }
 
   ngOnInit() {
+    this.isFavorite();
   }
 
+  ngOnChanges() { }
+
+  favoriteMovie() {
+    this.movieService.favoriteMovie(this.movie.imdbID).subscribe(
+      movie => {
+        this.movie = movie;
+        this.isFavorite();
+      },
+      err => console.log("Error Favoriting Movie.")
+    );
+  }
+
+  isFavorite() {
+    if (this.movie.Favorite) {
+      this.favoriteIcon = 'favorite';
+    } else {
+      this.favoriteIcon = 'favorite_border';
+    }
+  }
 }

@@ -24,13 +24,15 @@
                 <span *ngIf="movie.Metascore">{{ movie.Metascore }}</span>
             </div>
             <div class="pg">
-                    <h3>Rated</h3>
-                    <span *ngIf="movie.Rated">{{ movie.Rated }}</span>
-                </div>
+                <h3>Rated</h3>
+                <span *ngIf="movie.Rated">{{ movie.Rated }}</span>
+            </div>
         </div>
     </div>
 
-    <mat-icon  class="movie-fav">
-        favorite_border
-    </mat-icon>
+    <div class="fav-button">
+        <button mat-icon-button class="small-icon-button" color="primary" (click)="favoriteMovie()">
+            <mat-icon>{{ favoriteIcon }}</mat-icon>
+        </button>
+    </div>
 </div>

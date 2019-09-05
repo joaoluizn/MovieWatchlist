@@ -1,11 +1,11 @@
 * {
-    font-family: 'Roboto', Arial, sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  font-family: "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-#title{
+#title {
   padding-bottom: 20px;
 }
 
@@ -17,13 +17,18 @@
   justify-content: flex-start;
 }
 
-app-search-bar{
+.tabs {
+  margin-top: 20px;
+}
+
+app-search-bar {
   width: 60%;
 }
 
-.movies-container{
+.movies-container {
   margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+}
+
+.favorites-container {
+  margin-top: 40px;
 }
