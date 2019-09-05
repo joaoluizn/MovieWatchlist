@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span>A Spring Angular Watchlist</span>
+  <span>Watchtime</span>
 </mat-toolbar>
 
 <div class="container">
@@ -8,7 +8,7 @@
 </div>
 
 <mat-tab-group class="tabs" mat-align-tabs="center" (selectedTabChange)="reloadTab($event)">
-  <mat-tab label="Movies">
+  <mat-tab label="Results">
     <div class="movies-container">
       <app-movies-result [movies]="parentMovies"></app-movies-result>
     </div>
@@ -18,4 +18,9 @@
       <app-favorite-result [favorites]="favorites"></app-favorite-result>
     </div>
   </mat-tab>
+  <mat-tab label="Movies">
+      <div class="storage-container">
+        <app-storage-result [allMovies]="allMovies"></app-storage-result>
+      </div>
+    </mat-tab>
 </mat-tab-group>

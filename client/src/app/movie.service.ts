@@ -11,6 +11,7 @@ export class MovieService {
   private searchMovieUrl = 'http://0.0.0.0:8080/api/search-movies?searchQuery={0}';
   private getFavoritesUrl = 'http://0.0.0.0:8080/api/all-favorites';
   private favoriteMovieUrl = 'http://0.0.0.0:8080/api/favorite?imdbID={0}';
+  private getAllMoviesUrl = 'http://0.0.0.0:8080/api/all-movies'
 
   lastSearch = '';
   lastSuccess = false;
@@ -41,6 +42,10 @@ export class MovieService {
   favoriteMovie(movieId: string): Observable<any>{
     let query = this.favoriteMovieUrl.replace("{0}", movieId);
     return this.httpClient.get(query);
+  }
+
+  getAllMovies(): Observable<any>{
+    return this.httpClient.get(this.getAllMoviesUrl);
   }
 
   updateLastSuccess(status){

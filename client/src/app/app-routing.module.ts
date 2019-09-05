@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [];
 
@@ -23,6 +24,7 @@ const routes: Routes = [];
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatPaginatorModule,
   ],
   exports: [
     RouterModule,
@@ -33,6 +35,7 @@ const routes: Routes = [];
     MatIconModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatPaginatorModule,
   ]
 })
 export class AppRoutingModule { }

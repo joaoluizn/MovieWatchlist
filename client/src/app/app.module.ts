@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesResultComponent } from './movies-result/movies-result.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { FavoriteResultComponent } from './favorite-result/favorite-result.component';
+import { StorageResultComponent } from './storage-result/storage-result.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FavoriteResultComponent } from './favorite-result/favorite-result.compo
     SearchBarComponent,
     MoviesResultComponent,
     MovieItemComponent,
-    FavoriteResultComponent
+    FavoriteResultComponent,
+    StorageResultComponent
   ],
   imports: [
     BrowserModule,

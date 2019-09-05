@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title: string = 'Watchlist';
   parentMovies: any[] = [];
   favorites: any[] = [];
+  allMovies: any[] = [];
 
   constructor(
     private movieService: MovieService,
@@ -30,12 +31,18 @@ export class AppComponent implements OnInit {
         favMovies => this.favorites = this.utils.sortByDate(favMovies),
         err => console.log(err)
       );
-    } else {
+    } else if (event.tab.textLabel == 'Results')  {
       this.movieService.moviesTabReload()
         .subscribe(
           movies => this.parentMovies = this.utils.sortByDate(movies),
           err => console.log(err.error.message),
         );
+    }else{
+      this.movieService.getAllMovies()
+      .subscribe(
+        movies => this.allMovies = this.utils.sortByDate(movies),
+        err => console.log(err.error.message)
+      )
     }
   }
 }

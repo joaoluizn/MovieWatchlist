@@ -1,5 +1,5 @@
 <div class="movie-container">
-    <img class="movie-poster" *ngIf="movie.Poster" src="{{ movie.Poster }}" alt="Image not found">
+    <img class="movie-poster" *ngIf="movie.Poster" src="{{ movie.Poster }}" onError="this.src='https://github.com/joaoluizn/portfolio-content/blob/master/image_not_found.png?raw=true'" alt="">
 
     <div class="movie-info">
         <h2 *ngIf="movie.Title">{{ movie.Title }}</h2>
