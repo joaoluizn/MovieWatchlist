@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
+import { HelperService } from './utils/operations';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
+    private utils: HelperService,
   ) { }
 
   ngOnInit() { }
@@ -25,13 +27,13 @@ export class AppComponent implements OnInit {
   reloadTab(event) {
     if (event.tab.textLabel == 'Favorites') {
       this.movieService.getAllFavorites().subscribe(
-        res => this.favorites = res,
+        favMovies => this.favorites = this.utils.sortByDate(favMovies),
         err => console.log(err)
       );
     } else {
       this.movieService.moviesTabReload()
         .subscribe(
-          res => this.parentMovies = res,
+          movies => this.parentMovies = this.utils.sortByDate(movies),
           err => console.log(err.error.message),
         );
     }

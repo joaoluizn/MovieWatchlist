@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { HelperService } from '../utils/operations';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,6 +16,7 @@ export class SearchBarComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
+    private utils: HelperService,
   ) { }
 
   ngOnInit() { }
@@ -23,7 +25,8 @@ export class SearchBarComponent implements OnInit {
     this.loading = true;
     this.movieService.searchMovies(searchValue).subscribe(
       movies => {
-        this.searchOutput.emit(movies);
+        let orderedMovies = this.utils.sortByDate(movies);
+        this.searchOutput.emit(orderedMovies);
         this.error = false;
         this.loading = false;
       },
