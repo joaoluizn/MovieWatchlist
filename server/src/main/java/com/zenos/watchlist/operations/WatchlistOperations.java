@@ -1,5 +1,6 @@
 package com.zenos.watchlist.operations;
 
+import com.zenos.watchlist.exceptions.EmptySearchQueryException;
 import com.zenos.watchlist.exceptions.ResourceNotFoundException;
 import com.zenos.watchlist.models.Movie;
 import com.zenos.watchlist.repositories.MovieRepository;
@@ -54,6 +55,10 @@ public class WatchlistOperations {
     }
 
     public List<Movie> searchMovies(String searchQuery){
+        if (searchQuery.isEmpty()){
+            throw new EmptySearchQueryException();
+        }
+
         RestTemplate restTemplate = new RestTemplate();
 
         MovieListWrapper simpleMovieListWrapper = restTemplate.getForObject(

@@ -18,7 +18,7 @@ public class WatchlistController {
     @RequestMapping(value = "/search-movies", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public @ResponseBody
-    List<Movie> searchMovies(@RequestParam(value = "searchQuery", defaultValue = "Tomorrow") String searchQuery) {
+    List<Movie> searchMovies(@RequestParam(value = "searchQuery") String searchQuery) {
         return watchlistOperations.searchMovies(searchQuery);
     }
 
