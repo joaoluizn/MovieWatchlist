@@ -40,6 +40,12 @@
 # *.iml
 # *.ipr
 
+# Maven
+.classpath
+.project
+.settings/
+target/
+
 # CMake
 cmake-build-*/
 

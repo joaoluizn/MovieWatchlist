@@ -5,11 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+/*
+* Since newer versions of hibernate, it recommends use the javax.persistence.Entity to modeling objects
+* More About: https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#entity-pojo-mapping
+* */
 @Entity
 @Table(name = "movies")
 @EntityListeners(AuditingEntityListener.class)
@@ -236,3 +239,4 @@ public class Movie implements Serializable {
         this.favorite = favorite;
     }
 }
+
