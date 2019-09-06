@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
 import { HelperService } from './utils/operations';
+import { Movie } from './models/movie.model';
 
 
 @Component({
@@ -10,9 +11,9 @@ import { HelperService } from './utils/operations';
 })
 export class AppComponent implements OnInit {
   title: string = 'Watchlist';
-  parentMovies: any[] = [];
-  favorites: any[] = [];
-  allMovies: any[] = [];
+  parentMovies: Movie[] = [];
+  favorites: Movie[] = [];
+  allMovies: Movie[] = [];
 
   constructor(
     private movieService: MovieService,

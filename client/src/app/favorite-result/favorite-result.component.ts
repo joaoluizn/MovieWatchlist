@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-favorite-result',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./favorite-result.component.scss']
 })
 export class FavoriteResultComponent implements OnInit {
-  @Input() favorites: any[];
+  @Input() favorites: Movie[];
   constructor() { }
 
   ngOnInit() {

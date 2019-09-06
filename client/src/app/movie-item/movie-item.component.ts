@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-movie-item',
@@ -7,7 +8,7 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movie-item.component.scss']
 })
 export class MovieItemComponent implements OnInit, OnChanges {
-  @Input() movie: any;
+  @Input() movie: Movie;
 
   favorite: boolean = false;
   favoriteIcon: string = 'favorite_border';

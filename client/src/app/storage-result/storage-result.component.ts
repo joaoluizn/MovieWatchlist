@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-storage-result',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./storage-result.component.scss']
 })
 export class StorageResultComponent implements OnInit {
-  @Input() allMovies: any[];
+  @Input() allMovies: Movie[];
   constructor() { }
 
   pageIndex: number = 0;

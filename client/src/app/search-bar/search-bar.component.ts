@@ -21,7 +21,7 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit() { }
 
-  searchMovie(searchValue) {
+  searchMovie(searchValue: string) {
     this.loading = true;
     this.movieService.searchMovies(searchValue).subscribe(
       movies => {

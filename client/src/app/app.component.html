@@ -9,17 +9,17 @@
 
 <mat-tab-group class="tabs" mat-align-tabs="center" (selectedTabChange)="reloadTab($event)">
   <mat-tab label="Results">
-    <div class="movies-container">
+    <div class="data-container">
       <app-movies-result [movies]="parentMovies"></app-movies-result>
     </div>
   </mat-tab>
   <mat-tab label="Favorites">
-    <div class="favorites-container">
+    <div class="data-container">
       <app-favorite-result [favorites]="favorites"></app-favorite-result>
     </div>
   </mat-tab>
   <mat-tab label="Movies">
-      <div class="storage-container">
+      <div class="data-container">
         <app-storage-result [allMovies]="allMovies"></app-storage-result>
       </div>
     </mat-tab>
