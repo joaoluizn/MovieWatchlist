@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private searchMovieUrl = 'http://0.0.0.0:8080/api/search-movies?searchQuery={0}';
-  private getFavoritesUrl = 'http://0.0.0.0:8080/api/all-favorites';
-  private favoriteMovieUrl = 'http://0.0.0.0:8080/api/favorite?imdbID={0}';
-  private getAllMoviesUrl = 'http://0.0.0.0:8080/api/all-movies'
+  private serverUrl = environment.serverUrl;
+  private searchMovieUrl = `${this.serverUrl}/api/search-movies?searchQuery={0}`;
+  private getFavoritesUrl = `${this.serverUrl}/api/all-favorites`;
+  private favoriteMovieUrl = `${this.serverUrl}/api/favorite?imdbID={0}`;
+  private getAllMoviesUrl = `${this.serverUrl}/api/all-movies`
 
   lastSearch = '';
   lastSuccess = false;
