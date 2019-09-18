@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const routes: Routes = [];
 
@@ -25,6 +26,7 @@ const routes: Routes = [];
     MatTabsModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
+    MatDialogModule
   ],
   exports: [
     RouterModule,
@@ -36,6 +38,7 @@ const routes: Routes = [];
     MatTabsModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
+    MatDialogModule
   ]
 })
 export class AppRoutingModule { }

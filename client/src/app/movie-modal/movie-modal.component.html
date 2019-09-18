@@ -1,0 +1,23 @@
+<div class="data-container">
+    <div class="header">
+        <h2 *ngIf="data.movie.Title">{{ data.movie.Title }}</h2>
+        <img class="movie-poster" *ngIf="data.movie.Poster" src="{{ data.movie.Poster }}" onError="this.src='https://github.com/joaoluizn/portfolio-content/blob/master/image_not_found.png?raw=true'" alt="">
+    </div>
+    <div class="actors">
+        <h4 class="title">Actors:</h4>
+        <p *ngIf="data.movie.Actors">{{ data.movie.Actors }}</p>
+    </div>
+    <div class="directors">
+        <h4 class="title">Directors:</h4>
+        <p *ngIf="data.movie.Director">{{ data.movie.Director }}</p>
+    </div>
+    <div class="genre">
+        <h4 class="title">Genre:</h4>
+        <p *ngIf="data.movie.Genre"> {{ data.movie.Genre }}</p>
+    </div>
+    <div class="plot">
+        <h4 class="title">Sinopse:</h4>
+        <p *ngIf="data.movie.Plot">{{ data.movie.Plot }}</p>
+    </div>
+</div>
+

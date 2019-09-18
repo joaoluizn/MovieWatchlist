@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { MoviesResultComponent } from './movies-result/movies-result.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { FavoriteResultComponent } from './favorite-result/favorite-result.component';
 import { StorageResultComponent } from './storage-result/storage-result.component';
+import { MovieModalComponent } from './movie-modal/movie-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,18 @@ import { StorageResultComponent } from './storage-result/storage-result.componen
     MoviesResultComponent,
     MovieItemComponent,
     FavoriteResultComponent,
-    StorageResultComponent
+    StorageResultComponent,
+    MovieModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MovieModalComponent,
+  ]
 })
 export class AppModule { }

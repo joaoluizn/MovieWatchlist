@@ -1,0 +1,18 @@
+.data-container{
+    .header{
+        text-align: center;
+    }
+    img{
+        width: 35%;
+        text-align: center;
+    }
+
+    .actors, .genre, .directors, .plot{
+        h4{
+            margin-bottom: 0px;
+        }
+        p{
+            margin-top: 0px;
+        }
+    }
+}
